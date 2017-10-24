@@ -4,17 +4,39 @@
 
 <html>
 <head runat="server">
+
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/style.css">
+
     <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        <div>
+            <asp:Label ID="Label1" runat="server" Text="University Database Management System"></asp:Label>
+        </div>
+
+        <!--Navigation Bar-->
+
+        <nav class="navbar navbar-inverse" id="topnav">
+            <div class="container-fluid">
+                <a href="#home">Home</a>
+                <a href="#news">Student Affairs</a>
+                <a href="#contact">Department Affairs</a>
+            </div>
+        </nav>
+
+        <div>
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
-        </asp:ContentPlaceHolder>
-    </div>
+            </asp:ContentPlaceHolder>
+        </div>
     </form>
+
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
