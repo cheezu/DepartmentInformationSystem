@@ -15,6 +15,9 @@
     <div class="NavSidebar">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
+            <asp:TreeView ID="TreeView1" runat="server">
+            </asp:TreeView>
+
         </asp:ContentPlaceHolder>
     </div>
     <div class="MainContent">
