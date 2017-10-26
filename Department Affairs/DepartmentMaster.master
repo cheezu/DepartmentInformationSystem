@@ -1,6 +1,9 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DepartmentMaster.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
+<script runat="server">
+</script>
+
 
 <html>
 <head runat="server">
@@ -14,9 +17,6 @@
     <form id="form1" runat="server">
     <div class="NavSidebar">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-
-            <asp:TreeView ID="TreeView1" runat="server">
-            </asp:TreeView>
 
         </asp:ContentPlaceHolder>
     </div>
