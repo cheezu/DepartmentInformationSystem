@@ -8,6 +8,4 @@
     <br />
     <asp:Label ID="researchnumber_title" runat="server" Text="Research Projects Going On:" Font-Names="Comic Sans MS"></asp:Label>
     &nbsp;<asp:Label ID="researchnumber_data" runat="server" Text="Label" Font-Names="Impact"></asp:Label>
-    <asp:SqlDataSource ID="moneyleft_sqlsource" runat="server" ConnectionString="<%$ ConnectionStrings:DISConnectionString %>" SelectCommand="SELECT SUM(amount) AS SumAmount FROM Accounts"></asp:SqlDataSource>
-    <asp:SqlDataSource ID="researchnumber_sqlsource" runat="server" ConnectionString="<%$ ConnectionStrings:DISConnectionString %>" SelectCommand="SELECT COUNT(research_id) AS ResearchCount FROM Research"></asp:SqlDataSource>
     </asp:Content>

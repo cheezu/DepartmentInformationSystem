@@ -19,7 +19,7 @@
         <div class="leftpanel">
             <asp:TreeView ID="TreeView1" runat="server" Font-Names="Sitka Text">
                 <Nodes>
-                    <asp:TreeNode Text="Home" NavigateUrl="DepartmentWelcomePage.aspx">
+                    <asp:TreeNode Text="Department Affairs" NavigateUrl="DepartmentWelcomePage.aspx" Value="Department Affairs">
                         <asp:TreeNode NavigateUrl="Inventory.aspx" Text="Inventory"></asp:TreeNode>
                         <asp:TreeNode NavigateUrl="Accounts.aspx" Text="Accounts"></asp:TreeNode>
                         <asp:TreeNode NavigateUrl="Research.aspx" Text="Research"></asp:TreeNode>
