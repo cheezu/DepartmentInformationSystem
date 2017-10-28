@@ -2,6 +2,9 @@
 
 <asp:Content ContentPlaceHolderID="maincontent" runat="server" ID="inventorycontent">
 
+    <asp:Label ID="Status" runat="server" Text="Label"></asp:Label>
+
+    <br />
     <asp:GridView ID="Grid_Inventory" runat="server" DataSourceID="Sql_Inventory" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="inv_id">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775"></AlternatingRowStyle>
         <EditRowStyle BackColor="#999999"></EditRowStyle>
@@ -26,7 +29,7 @@
             <asp:TemplateField HeaderText="Description">
                 <ItemTemplate>
                     <b>Item:</b><br />
-                    <%# Eval("desc") %><br />
+                    <%# Eval("description") %><br />
                     <b>Cost:</b><br />
                     <%# Eval("cost") %>
                 </ItemTemplate>
@@ -42,12 +45,13 @@
             <asp:CommandField ShowEditButton="true" />
         </Columns>
     </asp:GridView>
-    <asp:SqlDataSource ID="Sql_Inventory" runat="server" ConnectionString="<%$ ConnectionStrings:DISConnectionString %>" SelectCommand="SELECT [inv_id], [desc], [location], [qty], [amount], [cost] FROM [Inventory]"
-        UpdateCommand="UPDATE Inventory SET cost=@cost, location=@location, qty=@qty WHERE (inv_id=@inv_id)" DeleteCommand="DELETE FROM Inventory WHERE (inv_id = @inv_id)">
+    <asp:SqlDataSource ID="Sql_Inventory" runat="server" ConnectionString="<%$ ConnectionStrings:DISConnectionString %>" SelectCommand="SELECT [inv_id], [description], [location], [qty], [amount], [cost] FROM [Inventory]"
+        UpdateCommand="UPDATE Inventory SET description = @description, cost = @cost, location = @location, qty = @qty WHERE (inv_id = @inv_id)" DeleteCommand="DELETE FROM Inventory WHERE (inv_id = @inv_id)">
         <DeleteParameters>
             <asp:Parameter Name="inv_id" />
         </DeleteParameters>
         <UpdateParameters>
+            <asp:Parameter Name="description" />
             <asp:Parameter Name="cost" />
             <asp:Parameter Name="location" />
             <asp:Parameter Name="qty" />
@@ -55,6 +59,6 @@
         </UpdateParameters>
 </asp:SqlDataSource>
 
-<asp:Button ID="Button1" runat="server" Text="New Inventory" />
+<asp:Button ID="Button1" runat="server" Text="New Inventory" OnClick="Button1_Click" />
 
 </asp:Content>
