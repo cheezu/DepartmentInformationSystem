@@ -5,7 +5,7 @@
     <asp:Label ID="Status" runat="server" Text="Label"></asp:Label>
 
     <br />
-    <asp:GridView ID="Grid_Inventory" runat="server" DataSourceID="Sql_Inventory" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="inv_id">
+    <asp:GridView ID="Grid_Inventory" runat="server" DataSourceID="Sql_Inventory" AutoGenerateColumns="False" DataKeyNames="inv_id" AllowPaging="True" PageSize="8">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775"></AlternatingRowStyle>
         <EditRowStyle BackColor="#999999"></EditRowStyle>
 
@@ -35,7 +35,7 @@
                 </ItemTemplate>
                 <EditItemTemplate>
                     <b>Item:</b><br />
-                    <%# Eval("desc") %><br />
+                    <asp:TextBox Text='<%# Bind("description") %>' runat="server" ID="txtDesc" /><br />
                     <b>Cost:</b><br />
                     <asp:TextBox Text='<%# Bind("cost") %>' runat="server" ID="txtCost" />
                 </EditItemTemplate>
@@ -43,9 +43,10 @@
             <asp:BoundField DataField="location" HeaderText="Location" />
             <asp:BoundField DataField="qty" HeaderText="Quantity" />
             <asp:CommandField ShowEditButton="true" />
+            <asp:CommandField ShowDeleteButton="true" />
         </Columns>
     </asp:GridView>
-    <asp:SqlDataSource ID="Sql_Inventory" runat="server" ConnectionString="<%$ ConnectionStrings:DISConnectionString %>" SelectCommand="SELECT [inv_id], [description], [location], [qty], [amount], [cost] FROM [Inventory]"
+    <asp:SqlDataSource ID="Sql_Inventory" runat="server" ConnectionString="<%$ ConnectionStrings:DISConnectionString %>" SelectCommand="SELECT [inv_id], [description], [location], [qty], [cost] FROM [Inventory]"
         UpdateCommand="UPDATE Inventory SET description = @description, cost = @cost, location = @location, qty = @qty WHERE (inv_id = @inv_id)" DeleteCommand="DELETE FROM Inventory WHERE (inv_id = @inv_id)">
         <DeleteParameters>
             <asp:Parameter Name="inv_id" />
