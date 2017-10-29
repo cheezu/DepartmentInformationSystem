@@ -28,6 +28,7 @@ public partial class LoginPage : System.Web.UI.Page
 
             if (dt.Rows.Count > 0)
             {
+                Session["username"] = txtUser.Text;
                 Response.Redirect("MainPage.aspx");
             }
             else

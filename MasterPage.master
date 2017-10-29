@@ -4,54 +4,40 @@
 
 <html>
 <head runat="server">
-
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-
     <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .headerfont {
+            font-family: Sylfaen;
+        }
+    </style>
 </head>
+
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:Label ID="Label1" runat="server" Text="University Database Management System"></asp:Label>
+        <div class="header">
+            <h1 class="headerfont">Home Page</h1>
         </div>
-
-        <!--Navigation Bar-->
-
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#">WebSiteName</a>
-                </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Student Affairs<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Student Registration</a></li>
-                        <li><a href="#">Student Grades</a></li>
-                        <li><a href="#">Student Course</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="#">Department Affairs</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <div>
-            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
-            </asp:ContentPlaceHolder>
+        <div class="leftpanel">
+            <asp:TreeView ID="LeftNavBar" runat="server" Font-Names="Sitka Text">
+                <Nodes>
+                    <asp:TreeNode Text="Home" NavigateUrl="MainPage.aspx">
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="Student Affairs" NavigateUrl="StudentMainPage.aspx">
+                        <asp:TreeNode NavigateUrl="StudentList.aspx" Text="Student List"></asp:TreeNode>
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="Department Affairs" NavigateUrl="DepartmentWelcomePage.aspx">
+                        <asp:TreeNode NavigateUrl="Inventory.aspx" Text="Inventory"></asp:TreeNode>
+                        <asp:TreeNode NavigateUrl="Accounts.aspx" Text="Accounts"></asp:TreeNode>
+                        <asp:TreeNode NavigateUrl="Research.aspx" Text="Research"></asp:TreeNode>
+                    </asp:TreeNode> 
+                </Nodes>
+            </asp:TreeView>
+        </div>
+        </br></br>
+        <div class="CenterPanel">
+            <asp:ContentPlaceHolder ID="maincontent" runat="server">This page is empty at the moment. Hold on!</asp:ContentPlaceHolder>
         </div>
     </form>
-
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
 </body>
 </html>
