@@ -3,13 +3,13 @@
 <asp:Content ContentPlaceHolderID="maincontent" runat="server">
     Here we will tell you about the accounts of the department.
 
-    <asp:GridView ID="grid_accounts" runat="server" AutoGenerateColumns="False" DataKeyNames="tran_id" DataSourceID="sql_accounts" CellPadding="4" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="grid_accounts" runat="server" AutoGenerateColumns="False" DataKeyNames="tran_id" DataSourceID="sql_accounts" CellPadding="4" ForeColor="#333333" GridLines="None" AllowSorting="True">
 
         <AlternatingRowStyle BackColor="White" ForeColor="#284775"></AlternatingRowStyle>
         <Columns>
             <asp:BoundField DataField="tran_id" HeaderText="Transaction ID" ReadOnly="True" InsertVisible="False" SortExpression="tran_id"></asp:BoundField>
             <asp:BoundField DataField="amount" HeaderText="Amount" SortExpression="amount"></asp:BoundField>
-            <asp:BoundField DataField="Description" HeaderText="description" SortExpression="description"></asp:BoundField>
+            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="description"></asp:BoundField>
             <asp:CommandField ShowEditButton="true" HeaderText="Edit?"/>
             <asp:CommandField ShowDeleteButton="true" HeaderText="Delete?" />
         </Columns>
