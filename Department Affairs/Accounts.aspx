@@ -10,8 +10,8 @@
             <asp:BoundField DataField="tran_id" HeaderText="Transaction ID" ReadOnly="True" InsertVisible="False" SortExpression="tran_id"></asp:BoundField>
             <asp:BoundField DataField="amount" HeaderText="Amount" SortExpression="amount"></asp:BoundField>
             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="description"></asp:BoundField>
-            <asp:CommandField ShowEditButton="true" HeaderText="Edit?"/>
-            <asp:CommandField ShowDeleteButton="true" HeaderText="Delete?" />
+            <asp:CommandField ShowEditButton="true" HeaderText="Edit"/>
+            <asp:CommandField ShowDeleteButton="true" HeaderText="Delete" />
         </Columns>
         <EditRowStyle BackColor="#999999"></EditRowStyle>
 
