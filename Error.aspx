@@ -37,7 +37,7 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <br />
-    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+    <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="background-color: lightgreen">
 
@@ -64,7 +64,7 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <br />
-    <asp:UpdatePanel ID="UpdatePanel4" runat="server">
+    <asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="background-color:darkkhaki">
                 <asp:CheckBoxList runat="server" ID="cb1" OnSelectedIndexChanged="cb1_SelectedIndexChanged" AutoPostBack="True">
@@ -77,23 +77,48 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <br />
-    <asp:UpdatePanel ID="UpdatePanel5" runat="server">
+    <asp:UpdatePanel ID="UpdatePanel5" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="background-color:lightpink">
 
                 <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox2" ErrorMessage="required bro"></asp:RequiredFieldValidator>
                 <br />
                 <asp:Button ID="Button1" runat="server" Text="click me pls" Width="207px" />
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
     <br />
-    <asp:UpdatePanel ID="UpdatePanel6" runat="server">
+    <asp:UpdatePanel ID="UpdatePanel6" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="background-color:aqua">
                 <asp:GridView ID="GridView1" runat="server">
                 </asp:GridView>
+            </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    <br />
+    <asp:UpdatePanel ID="UpdatePanel7" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+            <div style="background-color:greenyellow">
+
+                <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                <br />
+                <asp:Button ID="Button2" runat="server" Text="Click me!" PostBackUrl="~/Error.aspx" OnClick="Button2_Click" />
+            </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    <br />
+    <asp:UpdatePanel ID="UpdatePanel8" runat="server">
+        <ContentTemplate>
+            <div style="background-color:lavender">
+
+                <asp:DropDownList ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" AutoPostBack="True">
+                    <asp:ListItem>LOL</asp:ListItem>
+                    <asp:ListItem>OMG</asp:ListItem>
+                    <asp:ListItem>ROFL</asp:ListItem>
+                </asp:DropDownList>
+                <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
