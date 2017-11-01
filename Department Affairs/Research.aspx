@@ -24,7 +24,10 @@
 
         <RowStyle BackColor="#F7F6F3" ForeColor="#333333"></RowStyle>
     </asp:DetailsView>
-    <asp:SqlDataSource ID="sql_Research" runat="server" ConnectionString='<%$ ConnectionStrings:DISConnectionString %>' InsertCommand="INSERT INTO Research(description, author, start_date) VALUES (@description, @author, @date)" SelectCommand="SELECT research_id, description, author, start_date FROM Research ORDER BY research_id" UpdateCommand="UPDATE Research SET description = @description, author = @author, start_date = @start_date WHERE (research_id = @research_id)">
+    <asp:SqlDataSource ID="sql_Research" runat="server" ConnectionString='<%$ ConnectionStrings:DISConnectionString %>' InsertCommand="INSERT INTO Research(description, author, start_date) VALUES (@description, @author, @date)" SelectCommand="SELECT research_id, description, author, start_date FROM Research ORDER BY research_id" UpdateCommand="UPDATE Research SET description = @description, author = @author, start_date = @start_date WHERE (research_id = @research_id)" DeleteCommand="DELETE FROM Research WHERE (research_id = @research_id)">
+        <DeleteParameters>
+            <asp:Parameter Name="research_id"></asp:Parameter>
+        </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="description"></asp:Parameter>
             <asp:Parameter Name="author"></asp:Parameter>
