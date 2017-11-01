@@ -5,7 +5,7 @@
 
     <p>
         <asp:GridView ID="StudentListGrid" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="StudentListSource" DataKeyNames="RegNo"
-            CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" >
+            CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" OnRowCommand="StudentListGrid_RowCommand">
             <Columns>
                 <asp:BoundField DataField="RegNo" HeaderText="RegNo" InsertVisible="False" ReadOnly="True" SortExpression="RegNo" />
                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" ReadOnly="True" />
@@ -14,6 +14,14 @@
                 <asp:BoundField DataField="CGPA" HeaderText="CGPA" SortExpression="CGPA" />
                 <asp:CommandField ShowEditButton="true" />
                 <asp:CommandField ShowDeleteButton="true" />
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="GradeUpdateBtn" runat="server" Width="150" Text="Update Grades" CommandName="GradeUpdateBtn" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
+                    </ItemTemplate>
+                    <ItemTemplate>
+                        <asp:Button ID="CourseRegBtn" runat="server" Width="150" Text="Register Course" CommandName="CourseRegistrationBtn" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="StudentListSource" runat="server" ConnectionString="<%$ ConnectionStrings:Department Information System Database (Shayna)ConnectionString %>"

@@ -42,4 +42,21 @@ public partial class StudentAffairsPage : System.Web.UI.Page
         }
     }
 
+    protected void StudentListGrid_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "UpdateCourseBtn")
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            GridViewRow row = StudentListGrid.Rows[index];
+            Response.Redirect("~/UpdateGradePage.aspx?RegNo=" + row.Cells[0].Text);
+        }
+
+        else if (e.CommandName == "CourseRegistrationBtn")
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            GridViewRow row = StudentListGrid.Rows[index];
+            Response.Redirect("~/CourseRegistrationPage.aspx?RegNo=" + row.Cells[0].Text);
+        }
+    }
+
 }
