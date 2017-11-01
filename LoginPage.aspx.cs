@@ -13,7 +13,7 @@ public partial class LoginPage : System.Web.UI.Page
     protected void LoginButton_Click(object sender, EventArgs e)
     {
 
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["secretarydb"].ConnectionString);
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["theDb"].ConnectionString);
 
         try
         {
