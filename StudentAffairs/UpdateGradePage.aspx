@@ -19,7 +19,7 @@
             <asp:CommandField ShowEditButton="true" />
         </Columns>
     </asp:GridView>
-    <asp:SqlDataSource ID="SemesterCourseSource" runat="server" ConnectionString="<%$ ConnectionStrings:Department Information System Database (Shayna)Connection   String %>"
+    <asp:SqlDataSource ID="SemesterCourseSource" runat="server" ConnectionString="<%$ ConnectionStrings:DISConnectionString %>"
         SelectCommand="SELECT [CourseRegId], [RegNo], [CourseId], [CourseName], [Grade] FROM [CourseRegistration] inner join [CourseList] ON [DeptCourse].Year = [StudentDetails].Year" />
 
 </asp:Content>

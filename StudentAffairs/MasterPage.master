@@ -26,8 +26,8 @@
                 <Nodes>
                     <asp:TreeNode Text="Home" NavigateUrl="/MainPage.aspx">
                     </asp:TreeNode>
-                    <asp:TreeNode Text="Student Affairs" NavigateUrl="StudentMainPage.aspx">
-                        <asp:TreeNode NavigateUrl="StudentAffairsPage.aspx" Text="Student List"></asp:TreeNode>
+                    <asp:TreeNode Text="Student Affairs" NavigateUrl="/StudentAffairs/StudentMainPage.aspx">
+                        <asp:TreeNode NavigateUrl="/StudentAffairs/StudentAffairsPage.aspx" Text="Student List"></asp:TreeNode>
                     </asp:TreeNode>
                     <asp:TreeNode Text="Department Affairs" NavigateUrl="/DepartmentAffairs/DepartmentWelcomePage.aspx">
                         <asp:TreeNode NavigateUrl="/DepartmentAffairs/Inventory.aspx" Text="Inventory"></asp:TreeNode>

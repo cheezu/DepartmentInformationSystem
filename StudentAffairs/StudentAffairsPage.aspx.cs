@@ -29,6 +29,12 @@ public partial class StudentAffairsPage : System.Web.UI.Page
                 StudentListGrid.DataBind();
             }
         }
+
+        string status = Request.QueryString["status"];
+        if (status == "success")
+        {
+            Label1.Visible = true;
+        }
     }
 
     protected void StudentListGrid_RowCommand(object sender, GridViewCommandEventArgs e)

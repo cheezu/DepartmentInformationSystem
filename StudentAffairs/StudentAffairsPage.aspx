@@ -50,6 +50,7 @@
                 <asp:Parameter Name="RegNo"></asp:Parameter>
             </UpdateParameters>
         </asp:SqlDataSource>
+        <asp:Label ID="Label1" runat="server" ForeColor="Green" Text="Course Registered" Visible="False"></asp:Label>
     </p>
     <p>
         &nbsp;</p>
