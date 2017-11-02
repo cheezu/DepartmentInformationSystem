@@ -23,6 +23,6 @@ Default skin template. The following skins are provided as examples only.
   <PagerStyle CssClass="PagerStyleClass" BackColor="#C1DBFA" />
 </asp:GridView>
 
-<asp:button runat="server" ForeColor="black" />
+<asp:button runat="server" ForeColor="red" />
 
-<asp:Label runat="server" ForeColor="Black"></asp:Label>
+<asp:Label runat="server" ForeColor="red"></asp:Label>
