@@ -44,7 +44,7 @@ public partial class StudentAffairsPage : System.Web.UI.Page
 
     protected void StudentListGrid_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-        if (e.CommandName == "UpdateCourseBtn")
+        if (e.CommandName == "GradeUpdateBtn")
         {
             int index = Convert.ToInt32(e.CommandArgument);
             GridViewRow row = StudentListGrid.Rows[index];
