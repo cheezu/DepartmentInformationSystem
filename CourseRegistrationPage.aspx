@@ -14,7 +14,7 @@
     </asp:CheckBoxList>
 
     <br/>
-    <asp:Button ID="SubmitBtn" runat="server" Text="Submit" />
+    <asp:Button ID="SubmitBtn" runat="server" Text="Submit" OnClick="SubmitBtn_Click" />
     <br/>
 
 

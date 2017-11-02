@@ -16,10 +16,12 @@
                 <asp:CommandField ShowDeleteButton="true" />
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:Button ID="GradeUpdateBtn" runat="server" Width="150" Text="Update Grades" CommandName="GradeUpdateBtn" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
-                    </ItemTemplate>
-                    <ItemTemplate>
                         <asp:Button ID="CourseRegBtn" runat="server" Width="150" Text="Register Course" CommandName="CourseRegistrationBtn" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="GradeUpdateBtn" runat="server" Width="150" Text="Update Grades" CommandName="GradeUpdateBtn" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

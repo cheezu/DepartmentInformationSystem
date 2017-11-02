@@ -57,4 +57,26 @@ public partial class CourseRegistrationPage : System.Web.UI.Page
         con.Close();
     }
 
+
+    protected void SubmitBtn_Click(object sender, EventArgs e)
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["theDb"].ConnectionString);
+
+        con.Open();
+
+        for (int i = 0; i < CourseCbl.Items.Count; i++)
+        {
+            if (CourseCbl.Items[i].Selected == true)
+            {
+                SqlCommand courseIdValue = new SqlCommand("SELECT CourseId FROM CourseList WHERE CourseName=@CourseName", con);
+                courseIdValue.Parameters.AddWithValue("@CourseName", CourseCbl.Items[i].Text);
+
+                string courseNameValue = CourseCbl.Items[i].Text;
+                string insertSql = "INSERT INTO CourseRegistration (CourseId, CourseName, Sem) VALUES ('" + courseIdValue + "," + courseNameValue + "')";
+
+                SqlCommand cmd = new SqlCommand(insertSql, con);
+                cmd.ExecuteNonQuery();
+            }
+        }
+    }
 }
