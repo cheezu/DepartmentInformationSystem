@@ -79,7 +79,7 @@ public partial class CourseRegistrationPage : System.Web.UI.Page
                 cid = rd["CourseId"].ToString();
                 rd.Close();
 
-                string insertSql = "INSERT INTO CourseRegisteration (CourseId, RegNo) VALUES (@CourseId, @RegNo)";
+                string insertSql = "INSERT INTO CourseRegistration (CourseId, RegNo) VALUES (@CourseId, @RegNo)";
 
                 SqlCommand cmd = new SqlCommand(insertSql, con);
                 cmd.Parameters.AddWithValue("@CourseId", cid);
