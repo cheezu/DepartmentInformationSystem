@@ -4,7 +4,11 @@
     There was an error. Perform these tasks to fix the error:<br />
     <br />
 &nbsp;
+
     <asp:scriptmanager ID="ScriptManager1" runat="server"></asp:scriptmanager>
+
+    <!--Update panel for users to find out the current time-->
+
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="background-color: lightyellow;padding: 20px">
@@ -16,6 +20,9 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <br />
+
+    <!--Update panel for users to select branches they wish to see-->
+
     <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="background-color: lightblue;padding: 20px">
@@ -37,6 +44,9 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <br />
+
+    <!--Update panel for users to find out the details about seperate colleges-->
+
     <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="background-color: lightgreen">
@@ -64,6 +74,9 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <br />
+
+    <!--Update panel for users to cancel course registration-->
+
     <asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="background-color:darkkhaki">
@@ -77,17 +90,24 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <br />
+
+    <!--Update panel for users to check if the textbox is filled-->
+
     <asp:UpdatePanel ID="UpdatePanel5" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="background-color:lightpink">
 
                 <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:Label ID="Label5" runat="server" Text="Enter valid input(s)."></asp:Label>
                 <br />
                 <asp:Button ID="Button1" runat="server" Text="click me pls" Width="207px" />
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
     <br />
+
+    <!--Update panel for users to view details about seperate colleges-->
+
     <asp:UpdatePanel ID="UpdatePanel6" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="background-color:aqua">
@@ -97,6 +117,9 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <br />
+
+    <!--Update panel for users to increase the number of users registered-->
+
     <asp:UpdatePanel ID="UpdatePanel7" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div style="background-color:greenyellow">
@@ -108,17 +131,19 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     <br />
+
+    <!--Update panel for users to select the semester the batch of students are being registered to-->
+
     <asp:UpdatePanel ID="UpdatePanel8" runat="server">
         <ContentTemplate>
             <div style="background-color:lavender">
 
                 <asp:DropDownList ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" AutoPostBack="True">
-                    <asp:ListItem>LOL</asp:ListItem>
-                    <asp:ListItem>OMG</asp:ListItem>
-                    <asp:ListItem>ROFL</asp:ListItem>
+                    <asp:ListItem>I</asp:ListItem>
+                    <asp:ListItem>II</asp:ListItem>
+                    <asp:ListItem>III</asp:ListItem>
                 </asp:DropDownList>
                 <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
-
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

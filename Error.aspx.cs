@@ -38,16 +38,18 @@ public partial class Department_Affairs_Error : System.Web.UI.Page
 
             GridView1.DataSource = ds;
             this.DataBind();
+
+            con.Close();
+
         }
 
-        catch(Exception ex)
+        catch (Exception ex)
         {
 
         }
 
         finally
         {
-
         }
 
         count = (int)Session["count"];
