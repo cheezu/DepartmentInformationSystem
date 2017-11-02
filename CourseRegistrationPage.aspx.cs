@@ -49,12 +49,9 @@ public partial class CourseRegistrationPage : System.Web.UI.Page
         reader = cmd.ExecuteReader();
         CourseCbl.Items.Clear();
 
-        if (reader.Read())
+        while (reader.Read())
         {
             CourseCbl.Items.Add(reader["CourseName"].ToString());
-        }
-        else
-        {
         }
 
         con.Close();

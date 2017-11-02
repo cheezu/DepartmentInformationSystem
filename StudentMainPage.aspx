@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="MainPage.aspx.cs" Inherits="MainPage"  MasterPageFile="MasterPage.master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="StudentMainPage.aspx.cs" Inherits="StudentMainPage"  MasterPageFile="MasterPage.master" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" ID="WelcomeText" runat="server">
     <asp:Label ID="WelcomeMsg" runat="server" Text="Welcome, User" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" Font-Names="Segoe Script"></asp:Label>

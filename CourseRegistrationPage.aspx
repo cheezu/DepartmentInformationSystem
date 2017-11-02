@@ -2,6 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="maincontent" Runat="Server">
 
+    <asp:Label ID="Label3" runat="server" Text="In the following, you may select the students' current semester and apply for the courses available in the same semester"></asp:Label>
+    <br/><br/>
     <asp:Label ID="Label1" runat="server" Text="Semester: "></asp:Label>
     <asp:DropDownList ID="SemesterDdl" runat="server" OnSelectedIndexChanged="SemesterDdl_OnSelectedIndexChanged" AutoPostBack="true">
         <asp:ListItem>Select</asp:ListItem>
@@ -11,7 +13,10 @@
     <asp:CheckBoxList ID="CourseCbl" runat="server" AutoPostBack="true">
     </asp:CheckBoxList>
 
-    <br />
+    <br/>
+    <asp:Button ID="SubmitBtn" runat="server" Text="Submit" />
+    <br/>
+
 
 </asp:Content>
 
