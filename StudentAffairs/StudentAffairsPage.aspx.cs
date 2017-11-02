@@ -28,17 +28,6 @@ public partial class StudentAffairsPage : System.Web.UI.Page
             {
                 StudentListGrid.DataBind();
             }
-            /*else
-            {
-                ds.Tables[0].Rows.Add(ds.Tables[0].NewRow());
-                StudentListGrid.DataSource = ds;
-                StudentListGrid.DataBind();
-                int columnCount = StudentListGrid.Rows[0].Cells.Count;
-                StudentListGrid.Rows[0].Cells.Clear();
-                StudentListGrid.Rows[0].Cells.Add(new TableCell());
-                StudentListGrid.Rows[0].Cells[0].ColumnSpan = columnCount;
-                StudentListGrid.Rows[0].Cells[0].Text = "No Records Found";
-            }*/
         }
     }
 
@@ -48,14 +37,14 @@ public partial class StudentAffairsPage : System.Web.UI.Page
         {
             int index = Convert.ToInt32(e.CommandArgument);
             GridViewRow row = StudentListGrid.Rows[index];
-            Response.Redirect("~/UpdateGradePage.aspx?RegNo=" + row.Cells[0].Text);
+            Response.Redirect("/UpdateGradePage.aspx?RegNo=" + row.Cells[0].Text);
         }
 
         else if (e.CommandName == "CourseRegistrationBtn")
         {
             int index = Convert.ToInt32(e.CommandArgument);
             GridViewRow row = StudentListGrid.Rows[index];
-            Response.Redirect("~/CourseRegistrationPage.aspx?RegNo=" + row.Cells[0].Text);
+            Response.Redirect("/CourseRegistrationPage.aspx?RegNo=" + row.Cells[0].Text);
         }
     }
 
