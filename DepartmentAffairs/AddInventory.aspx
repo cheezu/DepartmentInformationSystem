@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Department Affairs/DepartmentMaster.master" AutoEventWireup="true" CodeFile="AddInventory.aspx.cs" Inherits="Department_Affairs_AddInventory" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="DepartmentMaster.master" AutoEventWireup="true" CodeFile="AddInventory.aspx.cs" Inherits="Department_Affairs_AddInventory" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="maincontent" Runat="Server">
     <asp:SqlDataSource ID="sql_insertinv" runat="server" ConnectionString='<%$ ConnectionStrings:DISConnectionString %>' InsertCommand="INSERT INTO Inventory (description, cost, qty, location) VALUES (@description, @cost, @qty, @location)"

@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="FullMaster.master.cs" Inherits="Department_Affairs_DepartmentMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            font-family: Sylfaen;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <h1 class="auto-style1">University Department Information System</h1>
+        </div>
+        <div class="leftpanel">
+            <asp:TreeView ID="LeftNavBar" runat="server" Font-Names="Sitka Text">
+                <Nodes>
+                    <asp:TreeNode Text="Home" NavigateUrl="MainPage.aspx">
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="Student Affairs" NavigateUrl="StudentMainPage.aspx">
+                        <asp:TreeNode NavigateUrl="StudentAffairsPage.aspx" Text="Student List"></asp:TreeNode>
+                    </asp:TreeNode>
+                    <asp:TreeNode Text="Department Affairs" NavigateUrl="DepartmentWelcomePage.aspx">
+                        <asp:TreeNode NavigateUrl="Inventory.aspx" Text="Inventory"></asp:TreeNode>
+                        <asp:TreeNode NavigateUrl="Accounts.aspx" Text="Accounts"></asp:TreeNode>
+                        <asp:TreeNode NavigateUrl="Research.aspx" Text="Research"></asp:TreeNode>
+                    </asp:TreeNode> 
+                </Nodes>
+            </asp:TreeView>
+        </div>
+        <div class="CenterPanel">
+            <asp:ContentPlaceHolder ID="maincontent" runat="server">This page is empty at the moment. Hold on!</asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

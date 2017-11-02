@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Department Affairs/DepartmentMaster.master" AutoEventWireup="true" CodeFile="Research.aspx.cs" Inherits="Department_Affairs_Research" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="DepartmentMaster.master" AutoEventWireup="true" CodeFile="Research.aspx.cs" Inherits="Department_Affairs_Research" %>
 
 <asp:Content ID="MainContent" ContentPlaceHolderID="maincontent" runat="server">
     <asp:DetailsView ID="det_Research" runat="server" Height="50px" Width="766px" AllowPaging="True" DataSourceID="sql_Research" AutoGenerateRows="false" CellPadding="4" ForeColor="#333333" GridLines="None">

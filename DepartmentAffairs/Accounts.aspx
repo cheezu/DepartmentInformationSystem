@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Department Affairs/DepartmentMaster.master" AutoEventWireup="true" CodeFile="Accounts.aspx.cs" Inherits="Department_Affairs_Accounts" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="DepartmentMaster.master" AutoEventWireup="true" CodeFile="Accounts.aspx.cs" Inherits="Department_Affairs_Accounts" %>
 
 <asp:Content ContentPlaceHolderID="maincontent" runat="server">
     Here we will tell you about the accounts of the department.
