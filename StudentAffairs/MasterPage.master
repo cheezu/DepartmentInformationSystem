@@ -24,15 +24,15 @@
         <div class="leftpanel">
             <asp:TreeView ID="LeftNavBar" runat="server" Font-Names="Sitka Text">
                 <Nodes>
-                    <asp:TreeNode Text="Home" NavigateUrl="MainPage.aspx">
+                    <asp:TreeNode Text="Home" NavigateUrl="/MainPage.aspx">
                     </asp:TreeNode>
                     <asp:TreeNode Text="Student Affairs" NavigateUrl="StudentMainPage.aspx">
                         <asp:TreeNode NavigateUrl="StudentAffairsPage.aspx" Text="Student List"></asp:TreeNode>
                     </asp:TreeNode>
-                    <asp:TreeNode Text="Department Affairs" NavigateUrl="DepartmentWelcomePage.aspx">
-                        <asp:TreeNode NavigateUrl="Inventory.aspx" Text="Inventory"></asp:TreeNode>
-                        <asp:TreeNode NavigateUrl="Accounts.aspx" Text="Accounts"></asp:TreeNode>
-                        <asp:TreeNode NavigateUrl="Research.aspx" Text="Research"></asp:TreeNode>
+                    <asp:TreeNode Text="Department Affairs" NavigateUrl="DepartmentAffairs/DepartmentWelcomePage.aspx">
+                        <asp:TreeNode NavigateUrl="~/DepartmentAffairs/Inventory.aspx" Text="Inventory"></asp:TreeNode>
+                        <asp:TreeNode NavigateUrl="~/DepartmentAffairs/Accounts.aspx" Text="Accounts"></asp:TreeNode>
+                        <asp:TreeNode NavigateUrl="~/DepartmentAffairs/Research.aspx" Text="Research"></asp:TreeNode>
                     </asp:TreeNode> 
                 </Nodes>
             </asp:TreeView>

@@ -9,6 +9,7 @@
         <EditRowStyle BackColor="#999999"></EditRowStyle>
 
         <FieldHeaderStyle BackColor="#E9ECF1" Font-Bold="True"></FieldHeaderStyle>
+
         <Fields>
             <asp:BoundField DataField="research_id" HeaderText="ID" ReadOnly="true" InsertVisible="False" />
             <asp:BoundField DataField="description" HeaderText="Description" />
@@ -16,6 +17,7 @@
             <asp:BoundField DataField="start_date" HeaderText="Start Date" />
             <asp:CommandField ShowEditButton="True" ShowInsertButton="True" ShowDeleteButton="true" />
         </Fields>
+
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White"></FooterStyle>
 
         <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White"></HeaderStyle>
@@ -24,14 +26,20 @@
 
         <RowStyle BackColor="#F7F6F3" ForeColor="#333333"></RowStyle>
     </asp:DetailsView>
-    <asp:SqlDataSource ID="sql_Research" runat="server" ConnectionString='<%$ ConnectionStrings:DISConnectionString %>' InsertCommand="INSERT INTO Research(description, author, start_date) VALUES (@description, @author, @date)" SelectCommand="SELECT research_id, description, author, start_date FROM Research ORDER BY research_id" UpdateCommand="UPDATE Research SET description = @description, author = @author, start_date = @start_date WHERE (research_id = @research_id)" DeleteCommand="DELETE FROM Research WHERE (research_id = @research_id)">
+
+
+    <asp:SqlDataSource ID="sql_Research" runat="server" ConnectionString='<%$ ConnectionStrings:DISConnectionString %>'
+        InsertCommand="INSERT INTO Research(description, author, start_date) VALUES (@description, @author, @start_date)"
+        SelectCommand="SELECT research_id, description, author, start_date FROM Research ORDER BY research_id"
+        UpdateCommand="UPDATE Research SET description = @description, author = @author, start_date = @start_date WHERE (research_id = @research_id)"
+        DeleteCommand="DELETE FROM Research WHERE (research_id = @research_id)">
         <DeleteParameters>
             <asp:Parameter Name="research_id"></asp:Parameter>
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="description"></asp:Parameter>
             <asp:Parameter Name="author"></asp:Parameter>
-            <asp:Parameter Name="date"></asp:Parameter>
+            <asp:Parameter Name="start_date"></asp:Parameter>
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="description"></asp:Parameter>

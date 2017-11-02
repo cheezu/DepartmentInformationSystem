@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="AddStudent.aspx.cs" Inherits="AddStudent" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="maincontent" Runat="Server">
-    <asp:SqlDataSource ID="StudentListSource" runat="server" ConnectionString='<%$ ConnectionStrings:Department Information System Database (Shayna)ConnectionString %>' InsertCommand="INSERT INTO StudentDetails (Name, Section, Year, CGPA, DepartmentId, DepartmentName) VALUES (@Name, @Section, @Year, @CGPA, @DepartmentId, @DepartmentName)"
+    <asp:SqlDataSource ID="StudentListSource" runat="server" ConnectionString='<%$ ConnectionStrings:DISConnectionString %>' InsertCommand="INSERT INTO StudentDetails (Name, Section, Year, CGPA, DepartmentId, DepartmentName) VALUES (@Name, @Section, @Year, @CGPA, @DepartmentId, @DepartmentName)"
         SelectCommand="SELECT * FROM Inventory">
         <InsertParameters>
             <asp:ControlParameter Name="Name" ControlID="txtName" PropertyName="Text"></asp:ControlParameter>

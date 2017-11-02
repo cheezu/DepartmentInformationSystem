@@ -16,7 +16,7 @@ public partial class StudentAffairsPage : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["theDb"].ConnectionString);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DISConnectionString"].ConnectionString);
 
             con.Open();
             SqlCommand cmd = new SqlCommand("Select * from StudentDetails", con);
@@ -28,7 +28,7 @@ public partial class StudentAffairsPage : System.Web.UI.Page
             {
                 StudentListGrid.DataBind();
             }
-            else
+            /*else
             {
                 ds.Tables[0].Rows.Add(ds.Tables[0].NewRow());
                 StudentListGrid.DataSource = ds;
@@ -38,7 +38,7 @@ public partial class StudentAffairsPage : System.Web.UI.Page
                 StudentListGrid.Rows[0].Cells.Add(new TableCell());
                 StudentListGrid.Rows[0].Cells[0].ColumnSpan = columnCount;
                 StudentListGrid.Rows[0].Cells[0].Text = "No Records Found";
-            }
+            }*/
         }
     }
 

@@ -24,7 +24,7 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="StudentListSource" runat="server" ConnectionString="<%$ ConnectionStrings:Department Information System Database (Shayna)ConnectionString %>"
+        <asp:SqlDataSource ID="StudentListSource" runat="server" ConnectionString="<%$ ConnectionStrings:DISConnectionString %>"
             SelectCommand="SELECT [RegNo], [Name], [Section], [Year], [CGPA] FROM [StudentDetails]"
             UpdateCommand="UPDATE StudentDetails SET Section = @Section, Year = @Year, CGPA = @CGPA WHERE (RegNo = @RegNo)"
             DeleteCommand="DELETE FROM StudentDetails WHERE (RegNo = @RegNo)" 
@@ -52,7 +52,7 @@
     <p>
         &nbsp;</p>
     <p>
-        <asp:Button ID="NewStudentBtn" runat="server" Text="Insert" PostBackUrl="~/AddStudent.aspx" />
+        <asp:Button ID="NewStudentBtn" runat="server" Text="Insert" PostBackUrl="~/StudentAffairs/AddStudent.aspx" />
     </p>
 
 

@@ -7,13 +7,14 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Web.Configuration;
 
 public partial class LoginPage : System.Web.UI.Page
 {
     protected void LoginButton_Click(object sender, EventArgs e)
     {
 
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["theDb"].ConnectionString);
+        SqlConnection con = new SqlConnection(WebConfigurationManager.ConnectionStrings["DISConnectionString"].ConnectionString);
 
         try
         {
