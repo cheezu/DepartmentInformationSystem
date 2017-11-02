@@ -29,6 +29,12 @@ public partial class StudentAffairsPage : System.Web.UI.Page
                 StudentListGrid.DataBind();
             }
         }
+
+        string status = Request.QueryString["status"];
+        if (status == "success")
+        {
+            Label1.Visible = true;
+        }
     }
 
     protected void StudentListGrid_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -37,14 +43,14 @@ public partial class StudentAffairsPage : System.Web.UI.Page
         {
             int index = Convert.ToInt32(e.CommandArgument);
             GridViewRow row = StudentListGrid.Rows[index];
-            Response.Redirect("/UpdateGradePage.aspx?RegNo=" + row.Cells[0].Text);
+            Response.Redirect("/StudentAffairs/UpdateGradePage.aspx?RegNo=" + row.Cells[0].Text);
         }
 
         else if (e.CommandName == "CourseRegistrationBtn")
         {
             int index = Convert.ToInt32(e.CommandArgument);
             GridViewRow row = StudentListGrid.Rows[index];
-            Response.Redirect("/CourseRegistrationPage.aspx?RegNo=" + row.Cells[0].Text);
+            Response.Redirect("/StudentAffairs/CourseRegistrationPage.aspx?RegNo=" + row.Cells[0].Text);
         }
     }
 

@@ -16,10 +16,10 @@ public partial class UpdateCourse : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["theDb"].ConnectionString);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DISConnectionString"].ConnectionString);
 
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from DeptCourse left outer join StudentDetails on StudentDetails.Year=DeptCourse.Year", con);
+            SqlCommand cmd = new SqlCommand("", con);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(ds);
             con.Close();

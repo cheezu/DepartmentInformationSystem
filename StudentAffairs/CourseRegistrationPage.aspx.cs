@@ -16,7 +16,7 @@ public partial class CourseRegistrationPage : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["theDb"].ConnectionString);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DISConnectionString"].ConnectionString);
 
             con.Open();
 
@@ -38,7 +38,7 @@ public partial class CourseRegistrationPage : System.Web.UI.Page
 
     protected void SemesterDdl_OnSelectedIndexChanged(object sender, EventArgs e)
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["theDb"].ConnectionString);
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DISConnectionString"].ConnectionString);
 
         con.Open();
 
@@ -60,7 +60,7 @@ public partial class CourseRegistrationPage : System.Web.UI.Page
 
     protected void SubmitBtn_Click(object sender, EventArgs e)
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["theDb"].ConnectionString);
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DISConnectionString"].ConnectionString);
 
         con.Open();
 
@@ -71,12 +71,23 @@ public partial class CourseRegistrationPage : System.Web.UI.Page
                 SqlCommand courseIdValue = new SqlCommand("SELECT CourseId FROM CourseList WHERE CourseName=@CourseName", con);
                 courseIdValue.Parameters.AddWithValue("@CourseName", CourseCbl.Items[i].Text);
 
-                string courseNameValue = CourseCbl.Items[i].Text;
-                string insertSql = "INSERT INTO CourseRegistration (CourseId, CourseName, Sem) VALUES ('" + courseIdValue + "," + courseNameValue + "')";
+                SqlDataReader rd;
+                rd = courseIdValue.ExecuteReader();
+                string cid;
+
+                rd.Read();
+                cid = rd["CourseId"].ToString();
+                rd.Close();
+
+                string insertSql = "INSERT INTO CourseRegisteration (CourseId, RegNo) VALUES (@CourseId, @RegNo)";
 
                 SqlCommand cmd = new SqlCommand(insertSql, con);
+                cmd.Parameters.AddWithValue("@CourseId", cid);
+                cmd.Parameters.AddWithValue("@RegNo", Request.QueryString["RegNo"]);
                 cmd.ExecuteNonQuery();
             }
         }
+
+        Response.Redirect("/StudentAffairs/StudentAffairsPage.aspx?status=success");
     }
 }
